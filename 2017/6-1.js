@@ -18,5 +18,5 @@ do{
 	hash = banks.reduce((a,b) => a+"-"+b, 0)
 	visited.push(hash)
 } while(visited.indexOf(hash)==visited.length-1)
-
+console.log(hash);
 console.log(count);
