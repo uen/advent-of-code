@@ -1,7 +1,7 @@
 const fs = require('fs')
 const input = fs.readFileSync('data/5.txt', 'utf-8').trim();
 
-polymers = input.split('')
+let polymers = input.split('')
 const reactPolymers = (polymers) => {
     var p = []
     for(;;){
