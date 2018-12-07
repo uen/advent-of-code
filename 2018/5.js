@@ -33,7 +33,6 @@ const reactPolymers = (polymers) => {
 let removedPairsLength = reactPolymers(polymers).length
 console.log('2018/day5#part1:', removedPairsLength);
 
-
 let lowest = removedPairsLength
 'abcdefghijklmnopqrstuvwxyz'.split('').map((c) => {
     let problemRemoved = input.replace(new RegExp('('+c.toLowerCase()+'|'+c.toUpperCase()+')', 'g'), '').split('')
