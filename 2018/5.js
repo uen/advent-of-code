@@ -26,7 +26,6 @@ const reactPolymers = (polymers) => {
 
         polymers = r
     }
-
     return polymers
 }
 
