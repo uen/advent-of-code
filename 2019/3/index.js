@@ -35,7 +35,6 @@ const traverse = (wire, path) => {
         const direction = part.substring(0,1);
         const distance = Number(part.substring(1));
         
-        
         step(wire, direction, distance);
     }
 }
@@ -48,7 +47,6 @@ const closestIntersection = intersections
     .reduce((a, b) => a < b ? a : b);
 
 console.log("2019/day/3/#part1:", closestIntersection);
-
 
 const closestDirection = intersections
     .map(intersect => intersect.count)

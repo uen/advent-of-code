@@ -12,21 +12,17 @@ const run = (input, noun, verb) => {
 
 	let pointer = 0;
 	while(data[pointer] !== 99){
-		if(data[pointer] === 1){
+		if(data[pointer] === 1)
 			setValue(pointer + 3, getValue(pointer + 1) + getValue(pointer + 2));
-			pointer += 4
-		} else if(data[pointer] === 2){
+		else if(data[pointer] === 2)
 			setValue(pointer + 3, getValue(pointer + 1) * getValue(pointer + 2));
-			pointer += 4
-		}
 	}
 
+	pointer += 4
 	return data[0];
 }
 
 console.log("2019/day/2/#part1:", run(input, 12, 2));
-
-
 
 for(let verb = 1; verb < 100; verb++){
 	for(let noun = 1; noun < 100; noun++){
