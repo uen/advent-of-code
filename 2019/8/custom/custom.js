@@ -1,13 +1,16 @@
 const fs = require("fs");
-const input = fs.readFileSync("./input.txt", "utf-8");
+const input = fs.readFileSync("./input-custom.txt", "utf-8").trim();
 const image = input.split("");
 
-const wide = 8;
-const tall = 6;
+const tall = 8;
+const wide = image.length / tall
 
+console.log(image.length, "imag elength")
 const layers = []
 let layer = 0;
-while(layer !== image.length / (wide * tall)){
+console.log(Math.floor(image.length / (wide * tall)))
+while(layer !== (image.length / ((wide * tall)))){
+//	console.log("layer...", layer)
 	const layerStart = layer * wide * tall;
 	if(!layers[layer]) layers[layer] = [];
 	for(let y = 0; y < tall; y++){
@@ -20,7 +23,7 @@ while(layer !== image.length / (wide * tall)){
 	layer++;
 }
 
-console.log("pixel")
+console.log("got layers");
 const lowestZeroLayer = layers
 .map((layer) => [].concat.apply([], layer))
 .map((layer, k) => {
