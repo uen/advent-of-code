@@ -3,7 +3,7 @@ import fs from "fs";
 const input = fs.readFileSync("./input.txt", "utf8").split(",").map(Number);
 
 const getFishCountForDays = (days: number): number => {
-  const fishCount: Record<number, number> = {};
+  const fishCount: number[] = [];
   for (let regenerationRate = 8; regenerationRate > 0; regenerationRate--) {
     fishCount[regenerationRate] = input.filter(
       (value) => value === regenerationRate
@@ -20,7 +20,7 @@ const getFishCountForDays = (days: number): number => {
     fishCount[8] = newFishes;
   }
 
-  return Object.values(fishCount).reduce((a, b) => a + b, 0);
+  return fishCount.reduce((a, b) => a + b, 0);
 };
 
 console.log("2021/day/6/#part1", getFishCountForDays(80));

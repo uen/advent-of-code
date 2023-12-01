@@ -1,10 +1,11 @@
 const fs = require("fs");
-const input = fs.readFileSync("./input.txt", "utf-8");
+const input = fs.readFileSync("./input-custom.txt", "utf-8");
 const image = input.split("");
 
-const wide = 8;
-const tall = 6;
+const wide = 40;
+const tall = 8;
 
+console.log("init");
 const layers = []
 let layer = 0;
 while(layer !== image.length / (wide * tall)){
@@ -44,7 +45,7 @@ const finalImage = layers
 	}
 
 	return y2;
-}).forEach((yPart) => {
+}).slice(0,2).forEach((yPart) => {
 	console.log(yPart.map(a => a === "0" ? " " : "█").reduce((a, b) => a + b))
 });
 
